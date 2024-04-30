@@ -1,0 +1,19 @@
+.barra{
+    font-family: "Work Sans";
+    display:flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    /* align-items: center; */
+    padding: 0px 10px;
+    background-color: #00438a;
+    color: white;
+}
+
+.menuLinks{
+    display:flex; 
+    flex: 1; /* */
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #00438a;
+    padding: 0px 10px;
+}

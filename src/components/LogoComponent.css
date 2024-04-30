@@ -1,0 +1,14 @@
+.logo{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    /*justify-content: center; /*tipo word*/
+}
+
+.title{
+    font-size: 25px;
+    font-weight: 450;
+}

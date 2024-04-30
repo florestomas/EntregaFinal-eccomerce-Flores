@@ -1,0 +1,25 @@
+.boton{
+    font-size: 20px;
+    background-color: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    height: 100%;
+   width: 100%;
+    transition: color .3s ease-out;
+    
+}
+
+.content {
+    transition: background-color .3s ease-out;
+    flex:1;
+    text-align: center;
+}
+
+.content:hover {
+    background-color: #e9bb03;
+}
+
+.content:hover .boton {
+    color: black;
+}

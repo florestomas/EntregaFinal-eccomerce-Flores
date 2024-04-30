@@ -1,0 +1,18 @@
+.shoppingCart{
+    display: flex;
+    color: white;
+    flex-direction: row;
+    align-items: center;
+    gap:10px;
+    padding-left: 10px;
+    text-decoration: none;
+}
+
+.title{
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.carrito{
+    transform: scaleX(-1); 
+}
