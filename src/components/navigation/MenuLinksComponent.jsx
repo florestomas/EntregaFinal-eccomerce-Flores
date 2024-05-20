@@ -1,4 +1,5 @@
 import './MenuLinksComponent.css'
+import { Link } from 'react-router-dom';
 
 export default function MenuLinks ({ name, link}) {
     
@@ -9,7 +10,9 @@ export default function MenuLinks ({ name, link}) {
 
     return (
         <div className="content">
-            <button className="boton" onClick={handleClick} >{name}</button>
+            <button className="boton" onClick={handleClick} >{name}
+            <Link to={link}></Link>
+            </button>
         </div>
     );
     

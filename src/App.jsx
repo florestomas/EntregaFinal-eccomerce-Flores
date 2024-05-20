@@ -1,16 +1,24 @@
 import './App.css'
-import LogoComponent from './components/LogoComponent'
-import MenuLinks from './components/MenuLinksComponent'
-import NavBarComponent from './components/NavBarComponent'
-import ShoppingCartComponent from './components/ShoppingCartComponent'
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NavBarComponent from './components/navigation/NavBarComponent';
+import HomeComponent from './components/HomeView/HomeComponent';
+import ContactComponent from './components/ContactView/ContactComponent';
+/*
+import ProductsComponent from './components/ProductsView/ProductsComponent';
+import SingleProd from './components/ProductView/SingleProd';
+*/
 function App() {
-
 
   return (
     <>
-      <NavBarComponent></NavBarComponent>
-      <h1>Bienvenios a mi e-commerce</h1> 
+      <BrowserRouter>
+      <NavBarComponent/>
+        <Routes>
+          <Route exact path="/" element={<HomeComponent />} />
+          <Route exact path="/soporte" element={<ContactComponent />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
