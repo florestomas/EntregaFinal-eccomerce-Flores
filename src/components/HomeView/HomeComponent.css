@@ -1,0 +1,22 @@
+.fondo{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+
+.sape{
+    padding-top: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.text-on-image{
+    background-color: #e9bb03;
+    font-size: 45;
+    color: black;
+    position: absolute;
+    top: 3%;
+    left: 32%;
+    transform: translate(-50%, -50%);
+}

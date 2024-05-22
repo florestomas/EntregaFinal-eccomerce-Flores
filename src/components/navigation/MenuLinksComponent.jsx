@@ -10,9 +10,9 @@ export default function MenuLinks ({ name, link}) {
 
     return (
         <div className="content">
-            <button className="boton" onClick={handleClick} >{name}
-            <Link to={link}></Link>
-            </button>
+            <Link to={link}> 
+                <button className="boton">{name}</button>
+            </Link>
         </div>
     );
     

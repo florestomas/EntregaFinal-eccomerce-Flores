@@ -4,10 +4,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBarComponent from './components/navigation/NavBarComponent';
 import HomeComponent from './components/HomeView/HomeComponent';
 import ContactComponent from './components/ContactView/ContactComponent';
-/*
+import SingleProd from './components/ProductView/SingleProduct';
 import ProductsComponent from './components/ProductsView/ProductsComponent';
-import SingleProd from './components/ProductView/SingleProd';
-*/
+
 function App() {
 
   return (
@@ -16,7 +15,9 @@ function App() {
       <NavBarComponent/>
         <Routes>
           <Route exact path="/" element={<HomeComponent />} />
+          <Route exact path="/entradas" element={<ProductsComponent />} />
           <Route exact path="/soporte" element={<ContactComponent />} />
+          <Route exact path="/product/:prodId" element={<SingleProd />} />
         </Routes>
       </BrowserRouter>
     </>
