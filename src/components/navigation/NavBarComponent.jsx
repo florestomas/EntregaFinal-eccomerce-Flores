@@ -10,9 +10,9 @@ export default function NavBarComponent () {
         <nav className="barra">
             <LogoComponent></LogoComponent>
             <div className="menuLinks">
-                <MenuLinks name='INICIO' link='/'></MenuLinks>
-                <MenuLinks name='ENTRADAS' link='/entradas'></MenuLinks>
-                <MenuLinks name='SOPORTE' link='/soporte'></MenuLinks>
+                <MenuLinks name='LIBERTADORES' link='/LIBERTADORES'></MenuLinks>
+                <MenuLinks name='SUDAMERICANA' link='/SUDAMERICANA'></MenuLinks>
+                <MenuLinks name='RECOPA' link='/RECOPA'></MenuLinks>
             </div>
             <ShoppingCartComponent></ShoppingCartComponent>
         </nav>   

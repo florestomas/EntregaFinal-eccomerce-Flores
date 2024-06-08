@@ -15,8 +15,9 @@ function App() {
       <NavBarComponent/>
         <Routes>
           <Route exact path="/" element={<HomeComponent />} />
-          <Route exact path="/entradas" element={<ProductsComponent />} />
-          <Route exact path="/soporte" element={<ContactComponent />} />
+          <Route exact path="/Libertadores" element={<ProductsComponent />} />
+          <Route exact path="/Sudamericanas" element={<ContactComponent />} />
+          <Route exact path="/Recopas" element={<ContactComponent />} />
           <Route exact path="/product/:prodId" element={<SingleProd />} />
         </Routes>
       </BrowserRouter>
@@ -24,4 +25,8 @@ function App() {
   )
 }
 
+
+/*
+
+*/
 export default App
