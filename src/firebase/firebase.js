@@ -1,9 +1,17 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { collection,getDoc, getFirestore } from "firebase/firestore";
+import { initializeApp } from 'firebase/app';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-
+import {
+  addDoc,
+  collection,
+  doc,
+  getDocs,
+  getFirestore,
+  query,
+  updateDoc,
+  where,
+} from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -22,10 +30,11 @@ const db = getFirestore(app);
 
 export async function getProducts() {
   const response = await getDocs(collection(db, 'products'));
-  console.log(response);
   //response es un QuerySnapShot - es iterable
   const listaProds = [];
   response.forEach((docu) => listaProds.push({ id: docu.id, ...docu.data() }));
   return listaProds;
 }
+
+
 
