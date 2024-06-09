@@ -1,30 +1,41 @@
-import { useEffect, useState } from 'react';
-import { getProducts } from '../../asyncMock';
-import ProductCard from '../ProductsView/ProductCard';
-
+import { useState, useEffect } from 'react';
+import { getProducts } from '../../firebase/firebase';
 import './ProductsView.css'
 
 export default function ProductsComponent() {
-    const [products, setProducts] = useState([]);
 
-    useEffect(() => {
-        getProducts.then((data) => setProducts(data));
-    }, []);
+  const [myProds, setMyProds] = useState([]);
 
-    return (
-        <>
-            <div className='container'>
-                <article className="product-container">
-                    {products.map((product) => (
-                        <ProductCard
-                            title={product.title}
-                            price={product.price}
-                            image={product.image}
-                            idProd={product.id}
-                        />
-                    ))}
-                </article>
-            </div>
-        </>
-    );
+  function obtenerProductos() {
+    getProducts().then((products) => setMyProds(products));
+  }
+
+  useEffect(() => {
+    obtenerProductos();
+  }, []);
+
+  return (
+    <>
+      <div class='product-container'>
+        {myProds.map((prod) => (
+          <div key={prod.id}  class='container'>
+            <h4>{prod.title}</h4>
+            <img src= {prod.image} class='image'></img>
+          </div>  
+        ))}
+      </div>
+    </>
+  );
 }
+
+/*
+{myProds.map((prod) => (
+        <div key={prod.id} >
+          <div class='container'>
+          <h4>{prod.title}</h4>
+          <img src= {prod.image}></img>
+          </div>
+        </div>  
+      ))}
+
+*/

@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
 
-import { getProduct } from '../../asyncMock';
 import { useEffect, useState } from 'react';
 
 export default function SingleProd() {
+  /*
   const [product, setProduct] = useState({});
 
   const { prodId } = useParams();
@@ -11,7 +11,7 @@ export default function SingleProd() {
   useEffect(() => {
     setProduct(getProduct(prodId));
   }, []);
-
+  */
   return (
     <>
       <h1>Single Prod</h1>
