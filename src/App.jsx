@@ -11,6 +11,7 @@ function App() {
 
   return (
     <>
+
       <BrowserRouter>
         <NavBarComponent/>
           <Routes>
@@ -18,7 +19,9 @@ function App() {
             <Route exact path="/Libertadores" element={<ProductsComponent />} />
             <Route exact path="/Sudamericanas" element={<ProductsComponent />} />
             <Route exact path="/Recopas" element={<ProductsComponent />} />
-            <Route exact path="/product/:prodId" element={<SingleProd />} />
+            <Route exact path="/intercontinental/:prodId" element={<SingleProd />} />
+            <Route exact path="/libertadores/:prodId" element={<SingleProd/>} />
+            <Route exact path="/recopas/:prodId" element={<SingleProd />} />
           </Routes>
       </BrowserRouter>
     </>
