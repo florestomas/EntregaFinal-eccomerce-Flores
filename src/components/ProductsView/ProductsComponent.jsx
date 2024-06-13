@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getProducts } from '../../firebase/firebase';
+import { getProducts } from '../../context/ContextProducts';
 import { Link } from 'react-router-dom';
 
 import './ProductsView.css'
@@ -20,14 +20,14 @@ export default function ProductsComponent() {
 
   return (
     <>
-      <div class='product-container'>
+      <div className='product-container'>
         {myProds.map((prod) => (
 
-          <div key={prod.id}  class='container'>
+          <div key={prod.id}  className='container'>
             <h4>{prod.title}</h4>
             <Link to={`/${prod.torneo}/${prod.id}`}>
 
-            <img src= {prod.image} class='image'></img>
+            <img src= {prod.image} className='image'></img>
 
             </Link>
           </div>  
