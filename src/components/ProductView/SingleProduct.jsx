@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getProducts } from '../../firebase/firebase';
+import { getProducts } from '../../context/ProductContext';
 
 export default function SingleProd() {
   const { prodId } = useParams(); // Obtén el ID del producto desde los parámetros de la URL
