@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getProducts } from '../../context/ContextProducts';
+import { getProducts } from '../../context/ProductsContext';
 import { Link } from 'react-router-dom';
 
 import './ProductsView.css'

@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBarComponent from './components/navigation/NavBarComponent';
 import HomeComponent from './components/HomeView/HomeComponent';
 import SingleProd from './components/ProductView/SingleProduct';
-import { ProductProvider } from './context/ProductContext';
 
 
 
@@ -12,7 +11,7 @@ function App() {
 
   return (
 
-    <ProductProvider>
+ 
       <>
         <BrowserRouter>
           <NavBarComponent/>
@@ -27,7 +26,7 @@ function App() {
             </Routes>
         </BrowserRouter>
       </>
-    </ProductProvider>
+
   )
 }
 
