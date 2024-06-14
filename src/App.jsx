@@ -19,9 +19,9 @@ function App() {
           <NavBarComponent/>
             <Routes>
               <Route exact path="/" element={<HomeComponent />} />
-              <Route exact path="/Libertadores" element={<ProductsComponent />} />
-              <Route exact path="/Sudamericanas" element={<ProductsComponent />} />
-              <Route exact path="/Recopas" element={<ProductsComponent />} />
+              <Route exact path="/Libertadores" element={<ProductsComponent category={"libertadores"}/>} />
+              <Route exact path="/Sudamericanas" element={<ProductsComponent category={"sudamericanas"}/>} />
+              <Route exact path="/Recopas" element={<ProductsComponent category={"recopas"}/>} />
               <Route exact path="/intercontinental/:prodId" element={<SingleProd />} />
               <Route exact path="/libertadores/:prodId" element={<SingleProd/>} />
               <Route exact path="/recopas/:prodId" element={<SingleProd />} />

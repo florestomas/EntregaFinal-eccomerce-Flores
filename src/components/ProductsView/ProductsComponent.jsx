@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
 import { getProducts } from '../../firebase/firebase';
 import { Link } from 'react-router-dom';
-import { useParams } from "react-router-dom";
+
 import './ProductsView.css'
 
-export default function ProductsComponent() {
+export default function ProductsComponent({category}) {
 
   const [myProds, setMyProds] = useState([]);
 
-  let {category}  = useParams();
+
 
   useEffect(() => {
     obtenerProductos();
-  }, []);
+  }, [category]);
 
   function obtenerProductos() {
     console.log(category)
