@@ -1,9 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { getProducts } from '../../context/ProductsContext';
+import { getProducts } from '../../firebase/firebase';
+import { ProductContext } from '../../context/ProductsContext';
+
+import './SingleProduct.css'
 
 export default function SingleProd() {
+
+  const [products, setProducts] = useContext(ProductContext);
+
+
   const { prodId } = useParams(); // Obtén el ID del producto desde los parámetros de la URL
+
+
 
   const [myProds, setMyProds] = useState([]);
   const [loading, setLoading] = useState(true); // Estado para manejar el loading
@@ -46,16 +55,16 @@ export default function SingleProd() {
         <img src={myProduct.image} alt={myProduct.title} />
         <p>{myProduct.description}</p>
         {
-          
-            //<p>Categoría: {myProduct.category}</p>
-            //<p>Precio: {myProduct.price}</p>
-          
-          }
 
-          <button></button>
-</div>
-      
-      
+          //<p>Categoría: {myProduct.category}</p>
+          //<p>Precio: {myProduct.price}</p>
+
+        }
+
+        <button className="button" onClick={ () => {console.log(products);setProducts(myProduct)}}>aniadir al carro</button>
+      </div>
+
+
     </>
   );
 }
