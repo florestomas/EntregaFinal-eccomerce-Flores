@@ -10,6 +10,7 @@ export default function SingleProd() {
   const [products, setProducts] = useContext(ProductContext);
 
 
+
   const { prodId } = useParams(); // Obtén el ID del producto desde los parámetros de la URL
 
 
@@ -45,6 +46,23 @@ export default function SingleProd() {
 
 
 
+  const addToCart = () => {
+    setProducts((currItems) => {
+      const isItemsFound = currItems.find((item) => item.id === prodId);
+      if (isItemsFound) {
+        return currItems.map((item) => {
+          // if (item.id === id) {
+          //   return { ...item, quantity: item.quantity + 1 };
+          //} else {
+            return item;
+          //}
+        });
+      } else {
+        return [...currItems, myProduct];
+      }
+    });
+  };
+
 
   return (
     <>
@@ -61,14 +79,10 @@ export default function SingleProd() {
 
         }
 
-        <button className="button" onClick={ () => {console.log(products);setProducts(myProduct)}}>aniadir al carro</button>
+        <button className="button" onClick= {addToCart} >aniadir al carro</button>
       </div>
 
 
     </>
   );
 }
-
-/*
-
-*/

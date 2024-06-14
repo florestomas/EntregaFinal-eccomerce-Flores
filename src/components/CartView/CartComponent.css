@@ -1,0 +1,6 @@
+.list-group-item{
+    background-color: transparent !important;
+}
+.list-group{
+    min-width: 70%;
+}
