@@ -51,6 +51,8 @@ export default function SingleProd() {
             //<p>Precio: {myProduct.price}</p>
           
           }
+
+          <button></button>
 </div>
       
       
