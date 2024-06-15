@@ -20,7 +20,7 @@ function App() {
             <Routes>
               <Route exact path="/" element={<HomeComponent />} />
               <Route exact path="/Libertadores" element={<ProductsComponent category={"libertadores"}/>} />
-              <Route exact path="/Sudamericanas" element={<ProductsComponent category={"sudamericanas"}/>} />
+              <Route exact path="/Intercontinentales" element={<ProductsComponent category={"intercontinental"}/>} />
               <Route exact path="/Recopas" element={<ProductsComponent category={"recopas"}/>} />
               <Route exact path="/intercontinental/:prodId" element={<SingleProd />} />
               <Route exact path="/libertadores/:prodId" element={<SingleProd/>} />

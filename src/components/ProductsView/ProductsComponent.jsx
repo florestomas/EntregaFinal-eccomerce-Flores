@@ -11,12 +11,25 @@ export default function ProductsComponent({category}) {
 
 
   useEffect(() => {
-    obtenerProductos();
+    obtenerProductos(category);
   }, [category]);
 
-  function obtenerProductos() {
-    console.log(category)
-    getProducts().then((products) => setMyProds(products));
+  async function obtenerProductos(category) {
+
+
+    //getProducts().then((products) => setMyProds(products));
+    let myProductos = await getProducts();
+
+    let filteredProducts = myProductos;
+    console.log("FILTRO POR", category, myProductos);
+
+    if(category){
+        filteredProducts = myProductos.filter((prod)=> prod.torneo == category);
+    }
+
+    console.log(filteredProducts)
+   
+    setMyProds(filteredProducts);
   }
 
 
