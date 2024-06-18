@@ -13,6 +13,7 @@ export default function MenuLinks ({ name, link}) {
                 <button className="boton">{name}</button>
             </Link>
         </div>
+        
     );
     
 }
