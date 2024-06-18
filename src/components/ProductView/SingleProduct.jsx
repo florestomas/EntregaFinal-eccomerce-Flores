@@ -50,13 +50,8 @@ export default function SingleProd() {
     setProducts((currItems) => {
       const isItemsFound = currItems.find((item) => item.id === prodId);
       if (isItemsFound) {
-        return currItems.map((item) => {
-          // if (item.id === id) {
-          //   return { ...item, quantity: item.quantity + 1 };
-          //} else {
-            return item;
-          //}
-        });
+        return currItems;
+        
       } else {
         return [...currItems, myProduct];
       }
@@ -72,13 +67,7 @@ export default function SingleProd() {
         <h3>{myProduct.title}</h3>
         <img src={myProduct.image} alt={myProduct.title} />
         <p>{myProduct.description}</p>
-        {
-
-          //<p>Categoría: {myProduct.category}</p>
-          //<p>Precio: {myProduct.price}</p>
-
-        }
-
+       
         <button className="button" onClick= {addToCart} >aniadir al carro</button>
       </div>
 
