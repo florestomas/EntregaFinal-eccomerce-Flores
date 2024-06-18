@@ -10,7 +10,7 @@
 </div>  
 
 ## Descripcion
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nihil in at hic porro ad velit consectetur eum optio suscipit perferendis voluptates laboriosam illo vero expedita, libero nostrum voluptatum aut!
+En este ecommerce podras comprar tickets para ver finales de la epoca dorada del club atletico Boca Juniors.
 
 ## Dependencias
 
