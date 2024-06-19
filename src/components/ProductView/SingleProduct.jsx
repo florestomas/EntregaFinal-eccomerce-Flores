@@ -51,7 +51,7 @@ export default function SingleProd() {
       const isItemsFound = currItems.find((item) => item.id === prodId);
       if (isItemsFound) {
         return currItems;
-        
+
       } else {
         return [...currItems, myProduct];
       }
@@ -61,14 +61,16 @@ export default function SingleProd() {
 
   return (
     <>
-      <div>
-        <h1>Detalles de la competicion</h1>
-        <p>ID: {prodId}</p>
-        <h3>{myProduct.title}</h3>
-        <img src={myProduct.image} alt={myProduct.title} />
-        <p>{myProduct.description}</p>
-       
-        <button className="button" onClick= {addToCart} >aniadir al carro</button>
+      <div className="card">
+
+          <img className="image-card" src={myProduct.image} alt={myProduct.title} />
+
+        <div>
+          <h1 class="fs-1">{myProduct.title}</h1>
+          <p >{myProduct.description}</p>
+
+          <button className="btn btn-light" onClick={addToCart} >Añadir al carrito</button>
+        </div>
       </div>
 
 
