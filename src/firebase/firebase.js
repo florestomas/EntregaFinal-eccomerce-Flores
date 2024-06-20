@@ -36,3 +36,10 @@ export async function getProducts() {
   return listaProds;
 }
 
+export async function addOrder(order) {
+  const ordersCollection = collection(db, 'orders');
+  const docRef = await addDoc(ordersCollection, order);
+  console.log('Doc ref generado: ' + docRef);
+  console.log('Id generado: ' + docRef.id);
+  return docRef.id;
+}

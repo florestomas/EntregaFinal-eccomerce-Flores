@@ -1,7 +1,22 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
+import { addOrder } from '../../firebase/firebase';
+import { ProductContext } from '../../context/ProductsContext';
+
 import './CheckoutComponent.css';
+import { set } from 'firebase/database';
+
+
+
 
 export default function CheckoutComponent() {
+
+    const [products, setProducts] = useContext(ProductContext);
+    const [orderId, setOrderId] = useState(null);
+
+
+    
+    
+
     // Estado para manejar la validación del email y el éxito del formulario
     const [isEmailValid, setIsEmailValid] = useState(true);
     const [isFormCompleted, setIsFormCompleted] = useState(false);
@@ -20,6 +35,22 @@ export default function CheckoutComponent() {
             // Comprobar si todos los campos están llenos
             if (nameRef.current.value && phoneRef.current.value && emailRef.current.value && emailCheckRef.current.value) {
                 setIsFormCompleted(true); // Marcar el formulario como completado
+                
+                const newOrder = {
+                    buyer: {
+                      name: nameRef.current.value,
+                      phone: phoneRef.current.value,
+                      email: emailRef.current.value,
+                    },
+                    items: products,
+                    total: 2662011,
+                    date: new Date(),
+                };
+                
+                setProducts([]);
+                
+                addOrder(newOrder).then((id) => setOrderId(id));
+
             } else {
                 setIsFormCompleted(false); // Si faltan campos, no se completa el formulario
                 alert("Por favor, complete todos los campos.");
@@ -37,7 +68,7 @@ export default function CheckoutComponent() {
                 // Mostrar mensaje de éxito si el formulario está completado
                 <>
                     <h5 style={{marginTop:"50px"}}>Formulario completado con éxito</h5>
-                    <h5 style={{marginTop:"5px"}}>id Orden Generada: 26-6-2011{}</h5>
+                    <h5 style={{marginTop:"5px"}}>id Orden Generada: {orderId}</h5>
                 </>
                 
                 

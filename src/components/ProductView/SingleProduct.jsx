@@ -67,7 +67,7 @@ export default function SingleProd() {
 
         <div>
           <h1 class="fs-1">{myProduct.title}</h1>
-          <p >{myProduct.description}</p>
+          <h3 >{myProduct.description}</h3>
 
           <button className="btn btn-light" onClick={addToCart} >Añadir al carrito</button>
         </div>
