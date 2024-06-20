@@ -13,7 +13,7 @@ export default function SingleProd() {
 
   const { prodId } = useParams(); // Obtén el ID del producto desde los parámetros de la URL
 
-
+  const [countCartProd,setCountCartProd] = useState(1);
 
   const [myProds, setMyProds] = useState([]);
   const [loading, setLoading] = useState(true); // Estado para manejar el loading
@@ -69,7 +69,18 @@ export default function SingleProd() {
           <h1 class="fs-1">{myProduct.title}</h1>
           <h3 >{myProduct.description}</h3>
 
+
+          <div style={{display: "flex", flexDirection: "row", padding: "20px", justifyContent: "space-between", width: "15%"}}>
+            <button className="btn btn-light" onClick={() => {setCountCartProd(countCartProd + 1)}}>+</button>
+            <h5>{countCartProd}</h5>
+            <button className="btn btn-light" onClick={() => {setCountCartProd(countCartProd - 1)}}>-</button>
+
+
+          </div>
+          
+            <div style={{marginTop: "10px"}}>
           <button className="btn btn-light" onClick={addToCart} >Añadir al carrito</button>
+            </div>
         </div>
       </div>
 

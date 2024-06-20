@@ -16,18 +16,24 @@ export default function Cart() {
         }));
     };
 
+
+    // Función para vaciar el carrito
+    function vaciarCarrito() {
+        setProducts([]);
+    }
+
     return (
         <>
-            <h2 style={{margin: "10px"}}>Tus eTickets </h2>
+            <h2 style={{ margin: "10px" }}>Tus eTickets </h2>
             <div className="list">
-                
+
                 {products.map((prod) => (
 
                     <div key={prod.id} className="list-group">
                         <div className="list-group-item d-flex justify-content-between" >
-                            <img src={prod.image} style={{width:"150px", height: "80px"}}></img>
+                            <img src={prod.image} style={{ width: "150px", height: "80px" }}></img>
                             <h4 className="text-white">{prod.title}</h4>
-                            <h5 className="text-white">Cantidad:{}</h5>
+                            <h5 className="text-white">Cantidad:{ }</h5>
                             <h6 className="text-white">c/u ${prod.price}</h6>
                             <h6 className="text-white"> ${prod.price * 5}</h6>
                             <button className="btn btn-danger" onClick={() => eliminarProd(prod.id)}> Eliminar</button>
@@ -39,16 +45,16 @@ export default function Cart() {
 
                 <div className="buttons">
 
-                    <h4>Total de la compra: {}</h4>
+                    <h4>Total de la compra: { }</h4>
 
-                    <Link  to="/checkout">
+                    <Link to="/checkout">
                         <button className="button-warning"> Continuar con mi compra </button>
                     </Link>
 
-                    <button className="button-danger">Vaciar Carrito</button>
+                    <button className="button-danger" onClick={() => vaciarCarrito()}>Vaciar Carrito</button>
 
                 </div>
-                
+
             </div>
 
         </>
