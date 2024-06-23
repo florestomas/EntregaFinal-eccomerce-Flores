@@ -32,7 +32,7 @@ export async function getProducts() {
   const response = await getDocs(collection(db, 'products'));
   //response es un QuerySnapShot - es iterable
   const listaProds = [];
-  response.forEach((docu) => listaProds.push({ id: docu.id, ...docu.data() }));
+  response.forEach((docu) => listaProds.push({ id: docu.id, quantity: 1,...docu.data() }));
   return listaProds;
 }
 

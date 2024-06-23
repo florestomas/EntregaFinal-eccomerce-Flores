@@ -43,7 +43,9 @@ export default function CheckoutComponent() {
                       email: emailRef.current.value,
                     },
                     items: products,
-                    total: 2662011,
+                    total: products.reduce((total, prod) => {
+                        return total + prod.price * prod.quantity;
+                    }, 0),
                     date: new Date(),
                 };
                 

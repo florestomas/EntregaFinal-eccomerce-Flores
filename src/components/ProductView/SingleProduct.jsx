@@ -26,6 +26,7 @@ export default function SingleProd() {
         setMyProds(products);
         const product = products.find((prod) => prod.id === prodId);
         setMyProduct(product);
+        console.log(product);
       } catch (error) {
         console.error("Error fetching products:", error);
       } finally {
@@ -53,7 +54,8 @@ export default function SingleProd() {
         return currItems;
 
       } else {
-        return [...currItems, myProduct];
+        const updatedProduct = { ...myProduct, quantity: countCartProd };
+        return [...currItems, updatedProduct];
       }
     });
   };
@@ -70,10 +72,10 @@ export default function SingleProd() {
           <h3 >{myProduct.description}</h3>
 
 
-          <div style={{display: "flex", flexDirection: "row", padding: "20px", justifyContent: "space-between", width: "15%"}}>
-            <button className="btn btn-light" onClick={() => {setCountCartProd(countCartProd + 1)}}>+</button>
+          <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", width: "15%"}}>
+            <button className="btn btn-light" onClick={() => {setCountCartProd(countCartProd > 0 ? countCartProd-1 : countCartProd)}}>-</button>
             <h5>{countCartProd}</h5>
-            <button className="btn btn-light" onClick={() => {setCountCartProd(countCartProd - 1)}}>-</button>
+            <button className="btn btn-light" onClick={() => {setCountCartProd(countCartProd + 1)}}>+</button>
 
 
           </div>

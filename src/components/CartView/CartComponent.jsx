@@ -33,9 +33,9 @@ export default function Cart() {
                         <div className="list-group-item d-flex justify-content-between" >
                             <img src={prod.image} style={{ width: "150px", height: "80px" }}></img>
                             <h4 className="text-white">{prod.title}</h4>
-                            <h5 className="text-white">Cantidad:{ }</h5>
+                            <h5 className="text-white">Cantidad: {prod.quantity}</h5>
                             <h6 className="text-white">c/u ${prod.price}</h6>
-                            <h6 className="text-white"> ${prod.price * 5}</h6>
+                            <h6 className="text-white">sub-total ${prod.price * prod.quantity}</h6>
                             <button className="btn btn-danger" onClick={() => eliminarProd(prod.id)}> Eliminar</button>
 
                         </div>
@@ -43,9 +43,14 @@ export default function Cart() {
                     </div>
                 ))}
 
+                <h4 style={{margin: "10px"}}>Total de la compra: $ {
+                    products.reduce((total, prod) => {
+                        return total + prod.price * prod.quantity;
+                    }, 0)
+                }</h4>
                 <div className="buttons">
 
-                    <h4>Total de la compra: { }</h4>
+
 
                     <Link to="/checkout">
                         <button className="button-warning"> Continuar con mi compra </button>
