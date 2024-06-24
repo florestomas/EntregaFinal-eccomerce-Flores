@@ -15,7 +15,17 @@
     margin: 10px;
 }
 
-.image{
-    height: 300px;
+.image {
+    background-color: inherit;
+    transition: transform .2s; /* Animation */
     width: 100%;
-}
+    height: 300px;
+    margin: 0 auto;
+  }
+  
+
+  .image:hover {
+    -webkit-transform: scale(1.1);
+	transform: scale(1.1)w;
+  }
+  
